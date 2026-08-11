@@ -1,4 +1,474 @@
-home-workout-guide
-├── index.html
-└── docs
-    └── index.html
+
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Home Fitness Guide</title>  <meta name="description" content="A simple home fitness guide for busy people who want to work out at home.">  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "DM Sans", Arial, sans-serif;
+      background: #ffffff;
+      color: #111827;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #ecfdf5, #ffffff, #f0fdf4);
+      padding: 75px 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #d1fae5;
+      color: #047857;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 7px 14px;
+      border-radius: 50px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 68px);
+      line-height: 1.03;
+      letter-spacing: -2px;
+      font-weight: 700;
+    }
+
+    .hero p {
+      margin-top: 22px;
+      color: #4b5563;
+      font-size: 20px;
+      max-width: 600px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 17px 30px;
+      background: #10b981;
+      color: white;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: 700;
+      box-shadow: 0 8px 25px rgba(16,185,129,.25);
+      transition: .2s;
+    }
+
+    .button:hover {
+      background: #059669;
+      transform: translateY(-2px);
+    }
+
+    .note {
+      margin-top: 12px !important;
+      font-size: 14px !important;
+      color: #6b7280 !important;
+    }
+
+    .hero-box {
+      background: #111827;
+      color: white;
+      border-radius: 25px;
+      padding: 42px;
+      min-height: 390px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-shadow: 0 25px 55px rgba(0,0,0,.16);
+    }
+
+    .hero-box .emoji {
+      font-size: 60px;
+      margin-bottom: 20px;
+    }
+
+    .hero-box h2 {
+      font-size: 31px;
+      line-height: 1.15;
+      margin-bottom: 15px;
+    }
+
+    .hero-box p {
+      color: #d1d5db;
+      font-size: 17px;
+      margin: 0;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    .gray {
+      background: #f9fafb;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .title {
+      font-size: clamp(31px, 5vw, 45px);
+      line-height: 1.15;
+      letter-spacing: -1px;
+    }
+
+    .intro {
+      max-width: 700px;
+      margin: 18px auto 0;
+      color: #6b7280;
+      font-size: 18px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 45px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      border: 1px solid #e5e7eb;
+      text-align: left;
+    }
+
+    .icon {
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      font-size: 21px;
+      margin-bottom: 9px;
+    }
+
+    .card p {
+      color: #6b7280;
+    }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      max-width: 850px;
+      margin: 45px auto 0;
+    }
+
+    .benefit {
+      background: #f0fdf4;
+      border: 1px solid #d1fae5;
+      border-radius: 15px;
+      padding: 23px;
+      font-weight: 500;
+    }
+
+    .check {
+      color: #059669;
+      font-weight: 700;
+      margin-right: 10px;
+    }
+
+    .dark {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 90px 0;
+    }
+
+    .dark .title {
+      color: white;
+    }
+
+    .price {
+      margin-top: 28px;
+      font-size: 58px;
+      font-weight: 700;
+      line-height: 1;
+      color: #10b981;
+    }
+
+    .access {
+      margin-top: 12px;
+      color: #d1d5db;
+      font-size: 18px;
+    }
+
+    .secure {
+      margin-top: 15px;
+      color: #9ca3af;
+      font-size: 13px;
+    }
+
+    footer {
+      background: #030712;
+      color: #9ca3af;
+      text-align: center;
+      padding: 28px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 760px) {
+
+      .hero {
+        padding: 55px 0;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .hero-box {
+        min-height: 280px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .benefits {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+    }
+  </style></head><body>  <header class="hero"><div class="container hero-grid">
+
+  <div>
+
+    <span class="tag">
+      HOME FITNESS GUIDE
+    </span>
+
+    <h1>
+      Get Fit at Home, Even With a Busy Schedule
+    </h1>
+
+    <p>
+      A simple fitness guide for busy people who want to exercise at home
+      without spending hours at the gym.
+    </p>
+
+    <a
+      class="button"
+      href="https://branching0.gumroad.com/l/fpurgu"
+      target="_blank"
+      rel="noopener noreferrer">
+      GET THE GUIDE — $9.99
+    </a>
+
+    <p class="note">
+      Digital product • Instant access
+    </p>
+
+  </div>
+
+  <div class="hero-box">
+
+    <div class="emoji">
+      🏠💪
+    </div>
+
+    <h2>
+      Your home can be your gym.
+    </h2>
+
+    <p>
+      Follow a simple workout structure designed for people who have
+      limited time and want a practical way to stay active.
+    </p>
+
+  </div>
+
+</div>
+
+  </header>  <section class="gray"><div class="container center">
+
+  <h2 class="title">
+    You Don't Need More Time. You Need a Simpler Plan.
+  </h2>
+
+  <p class="intro">
+    Work, family and everyday responsibilities can make it difficult
+    to maintain a traditional gym routine.
+  </p>
+
+  <div class="cards">
+
+    <div class="card">
+
+      <div class="icon">⏰</div>
+
+      <h3>
+        Not Enough Time
+      </h3>
+
+      <p>
+        You don't need to spend hours working out to start building
+        a consistent exercise routine.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="icon">🏠</div>
+
+      <h3>
+        No Gym?
+      </h3>
+
+      <p>
+        You can exercise at home without relying on an expensive
+        gym membership.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="icon">📅</div>
+
+      <h3>
+        Busy Schedule?
+      </h3>
+
+      <p>
+        Keep your workouts simple enough to fit around your
+        everyday responsibilities.
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+  </section>  <section><div class="container">
+
+  <div class="center">
+
+    <h2 class="title">
+      What's Inside the Guide?
+    </h2>
+
+    <p class="intro">
+      A straightforward digital guide designed to make home workouts
+      easier to understand and easier to follow.
+    </p>
+
+  </div>
+
+
+  <div class="benefits">
+
+    <div class="benefit">
+      <span class="check">✓</span>
+      Simple home workouts
+    </div>
+
+    <div class="benefit">
+      <span class="check">✓</span>
+      No expensive gym membership required
+    </div>
+
+    <div class="benefit">
+      <span class="check">✓</span>
+      Minimal or no equipment needed
+    </div>
+
+    <div class="benefit">
+      <span class="check">✓</span>
+      Designed for busy schedules
+    </div>
+
+    <div class="benefit">
+      <span class="check">✓</span>
+      Easy-to-follow workout structure
+    </div>
+
+    <div class="benefit">
+      <span class="check">✓</span>
+      Digital access from your phone
+    </div>
+
+  </div>
+
+
+  <div class="center">
+
+    <a
+      class="button"
+      href="https://branching0.gumroad.com/l/fpurgu"
+      target="_blank"
+      rel="noopener noreferrer">
+      GET THE GUIDE — $9.99
+    </a>
+
+  </div>
+
+</div>
+
+  </section>  <section class="dark"><div class="container">
+
+  <h2 class="title">
+    Start Your Home Fitness Journey
+  </h2>
+
+  <p class="access">
+    Get the digital guide and start training at home.
+  </p>
+
+  <div class="price">
+    $9.99
+  </div>
+
+  <a
+    class="button"
+    href="https://branching0.gumroad.com/l/fpurgu"
+    target="_blank"
+    rel="noopener noreferrer">
+    GET THE GUIDE NOW
+  </a>
+
+  <p class="secure">
+    Secure checkout • Digital product • Instant access
+  </p>
+
+</div>
+
+  </section>  <footer>
+    © 2026 Home Fitness Guide. All rights reserved.
+  </footer></body>
+</html>
